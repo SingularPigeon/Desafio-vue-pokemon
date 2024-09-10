@@ -1,35 +1,7 @@
-# vue-pokemon
+# Desafio-Vue-Pokemón
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicación de los conocimentos adquiridos en Vue y Vue Router para crear una aplicación de adivinanza de Pokémon. Los usuarios pueden adivinar el nombre de los Pokémon a partir de imágenes parcialmente ocultas. Al adivinar correctamente, se revela la identidad del Pokémon y se actualiza el contador de Pokémon descubiertos.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+![](/src/assets/img/preview-pokemon.png)

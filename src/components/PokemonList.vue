@@ -1,15 +1,3 @@
-<template>
-  <div class="row pt-5">
-    <div class="col-md-3 mb-5" v-for="pokemon in pokemones" :key="pokemon.name">
-      <CardPokemon
-        :pokemonName="pokemon.name"
-        :imageUrl="pokemon.image"
-        @discovered-pokemon="onDiscovered"
-      />
-    </div>
-  </div>
-</template>
-
 <script>
 import PokeService from '@/services/PokeService'
 import CardPokemon from '@/components/CardPokemon.vue'
@@ -31,3 +19,14 @@ export default {
   }
 }
 </script>
+<template>
+  <div class="row pt-5">
+    <div class="col-md-3 mb-5" v-for="pokemon in pokemones" :key="pokemon.name">
+      <CardPokemon
+        :pokemonName="pokemon.name"
+        :imageUrl="pokemon.image"
+        @discovered-pokemon="onDiscovered"
+      />
+    </div>
+  </div>
+</template>

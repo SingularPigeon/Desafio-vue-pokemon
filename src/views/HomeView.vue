@@ -1,12 +1,3 @@
-<template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <ContadorComponent :count="discoveredCount" />
-    </div>
-    <PokemonList @discovered="addDiscovered" />
-  </div>
-</template>
-
 <script>
 import ContadorComponent from '@/components/ContadorComponent.vue'
 import PokemonList from '@/components/PokemonList.vue'
@@ -35,3 +26,11 @@ export default {
   }
 }
 </script>
+<template>
+  <div class="container">
+    <div class="row justify-content-center">
+      <ContadorComponent :count="discoveredCount" />
+    </div>
+    <PokemonList @discovered="addDiscovered" />
+  </div>
+</template>

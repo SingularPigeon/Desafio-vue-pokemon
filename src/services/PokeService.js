@@ -10,7 +10,7 @@ class PokeService {
       const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20'
       const { data } = await axios.get(url)
 
-      // Mapeamos los resultados para obtener el nombre y la URL de la imagen de cada Pokémon
+      // Mapeo a los resultados para obtener el nombre y la URL de la imagen de cada Pokémon
       this.pokemones = await Promise.all(
         data.results.map(async (pokemon) => {
           const { data: pokemonData } = await axios.get(pokemon.url)
@@ -18,7 +18,7 @@ class PokeService {
             name: pokemonData.name,
             image:
               pokemonData.sprites.other.dream_world.front_default ||
-              pokemonData.sprites.front_default // Fallback a front_default
+              pokemonData.sprites.front_default // dos alternativas por si no encuentra una de las impagenes
           }
         })
       )

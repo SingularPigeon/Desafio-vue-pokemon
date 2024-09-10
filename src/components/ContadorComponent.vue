@@ -1,13 +1,3 @@
-<template>
-  <div class="col-6 rounded p-2 d-flex align-items-center justify-content-center">
-    <p :style="countTextColor" class="fs-3">
-      Pokemones descubiertos:<span :style="countColor" class="ms-3 px-3 py-2 rounded-circle">{{
-        count
-      }}</span>
-    </p>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -34,4 +24,12 @@ export default {
   }
 }
 </script>
-<style scoped></style>
+<template>
+  <div class="col-6 rounded p-2 d-flex align-items-center justify-content-center">
+    <p :style="countTextColor" class="fs-3">
+      Pokemones descubiertos:<span :style="countColor" class="ms-3 px-3 py-2 rounded-circle">{{
+        count
+      }}</span>
+    </p>
+  </div>
+</template>
