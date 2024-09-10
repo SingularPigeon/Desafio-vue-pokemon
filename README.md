@@ -5,3 +5,15 @@ Aplicación de los conocimentos adquiridos en Vue y Vue Router para crear una ap
 ---
 
 ![](/src/assets/img/preview-pokemon.png)
+
+### Requisitos
+
+- **VueJs**
+- **Vue Router**
+- **Google Fonts**
+- **Bootstrap**
+
+### Autores
+
+- **Desarolladora:[Paloma Rivera](https://github.com/**SingularPigeon)\*\*
+- **Diseño: [Bootcamp Desafío Latam](desafiolatam.com)**
