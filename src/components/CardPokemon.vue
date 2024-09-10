@@ -1,8 +1,8 @@
 <template>
-  <div class="card text-center" style="width: 10rem">
+  <div class="card text-center h-100 bg-transparent border-0">
     <img
       :src="imageUrl"
-      class="card-img-top"
+      class="card-img-top h-100"
       :class="{ 'blur-grayscale-filter': !discovered }"
       alt="pokemon"
     />
@@ -16,7 +16,7 @@
         placeholder="Adivina el nombre"
       />
       <button v-if="!discovered" @click="checkGuess" class="btn btn-primary">Descubrir</button>
-      <p v-else>{{ pokemonName }}</p>
+      <p :style="nameTextColor" v-else>{{ pokemonName }}</p>
     </div>
   </div>
 </template>
@@ -33,11 +33,20 @@ export default {
       discovered: false
     }
   },
+  computed: {
+    nameTextColor() {
+      return {
+        color: '#385CA9',
+        fontFamily: 'Bangers',
+        fontSize: '24px'
+      }
+    }
+  },
   methods: {
     checkGuess() {
-      if (this.guess.toLowerCase() === this.pokemonName.toLowerCase()) {
+      if (this.guess.toLowerCase().trim() === this.pokemonName.toLowerCase()) {
         this.discovered = true
-        this.$emit('discovered-pokemon')
+        this.$emit('discovered-pokemon', this.pokemonName) // Emite el nombre del Pokémon descubierto
       } else {
         alert('Nombre incorrecto')
       }
@@ -45,9 +54,14 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .blur-grayscale-filter {
-  filter: blur(5px) grayscale(1);
+  filter: blur(8px) grayscale(100%);
+}
+.card {
+  width: 12rem;
+}
+.poke-name {
+  font-family: 'Bangers';
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <ContadorComponent :count="discoveredCount" />
-    <PokemonList @update-count="updateCount" />
+  <div class="container">
+    <div class="row justify-content-center">
+      <ContadorComponent :count="discoveredCount" />
+    </div>
+    <PokemonList @discovered="addDiscovered" />
   </div>
 </template>
 
@@ -16,12 +18,19 @@ export default {
   },
   data() {
     return {
-      discoveredCount: 0
+      discoveredList: [] // Almacena los Pokémon descubiertos
+    }
+  },
+  computed: {
+    discoveredCount() {
+      return this.discoveredList.length
     }
   },
   methods: {
-    updateCount(newCount) {
-      this.discoveredCount = newCount
+    addDiscovered(pokemonName) {
+      if (!this.discoveredList.includes(pokemonName)) {
+        this.discoveredList.push(pokemonName) // Añade el Pokémon a la lista
+      }
     }
   }
 }

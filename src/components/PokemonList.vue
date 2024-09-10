@@ -1,13 +1,11 @@
 <template>
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-3" v-for="(pokemon, index) in pokemones" :key="index">
-        <CardPokemon
-          :pokemonName="pokemon.name"
-          :imageUrl="getPokemonImage(pokemon.url)"
-          @discovered-pokemon="incrementCounter"
-        />
-      </div>
+  <div class="row pt-5">
+    <div class="col-md-3 mb-5" v-for="pokemon in pokemones" :key="pokemon.name">
+      <CardPokemon
+        :pokemonName="pokemon.name"
+        :imageUrl="pokemon.image"
+        @discovered-pokemon="onDiscovered"
+      />
     </div>
   </div>
 </template>
@@ -20,20 +18,15 @@ export default {
   components: { CardPokemon },
   data() {
     return {
-      pokemones: [],
-      discoveredCount: 0
+      pokemones: []
     }
   },
   async created() {
     this.pokemones = await PokeService.fetchPokemones()
   },
   methods: {
-    getPokemonImage(url) {
-      const id = url.split('/').filter(Boolean).pop()
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
-    },
-    incrementCounter() {
-      this.discoveredCount++
+    onDiscovered(pokemonName) {
+      this.$emit('discovered', pokemonName) // Reenvía el evento con el nombre del Pokémon
     }
   }
 }
