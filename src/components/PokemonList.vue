@@ -21,7 +21,7 @@ export default {
 </script>
 <template>
   <div class="row pt-5">
-    <div class="col-md-3 mb-5" v-for="pokemon in pokemones" :key="pokemon.name">
+    <div v-for="pokemon in pokemones" :key="pokemon.name" class="col-md-3 mb-5">
       <CardPokemon
         :pokemonName="pokemon.name"
         :imageUrl="pokemon.image"
