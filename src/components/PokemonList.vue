@@ -20,8 +20,12 @@ export default {
 }
 </script>
 <template>
-  <div class="row pt-5">
-    <div v-for="pokemon in pokemones" :key="pokemon.name" class="col-md-3 mb-5">
+  <div class="row d-flex flex-row flex-wrap pt-5">
+    <div
+      v-for="pokemon in pokemones"
+      :key="pokemon.name"
+      class="col-sm-6 col-md-4 mb-5 d-flex flex-column justify-content-center align-items-center g-1"
+    >
       <CardPokemon
         :pokemonName="pokemon.name"
         :imageUrl="pokemon.image"

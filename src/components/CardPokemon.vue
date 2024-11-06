@@ -32,10 +32,10 @@ export default {
 }
 </script>
 <template>
-  <div class="card text-center h-100 bg-transparent border-0">
+  <div class="card h-100 bg-transparent border-0">
     <img
       :src="imageUrl"
-      class="card-img-top h-100"
+      class="card-img-top h-100 img-fluid object-fit-contain text-center"
       :class="{ 'blur-grayscale-filter': !discovered }"
       alt="pokemon"
     />
@@ -59,6 +59,6 @@ export default {
   filter: blur(8px) grayscale(100%);
 }
 .card {
-  width: 12rem;
+  width: 200px;
 }
 </style>
